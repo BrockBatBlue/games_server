@@ -26,6 +26,10 @@ app.use(
   express.static(path.join(__dirname, "games", "solarSystemSim"))
 );
 
+app.use("/wake", (req, res) => {
+  res.json({ message: "Fine, okay, I'm awake now..." });
+});
+
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
